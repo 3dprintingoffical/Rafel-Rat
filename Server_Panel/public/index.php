@@ -110,7 +110,7 @@ if(!isLogin()){
 
     <div class="row tall-row">
         <div class="col-md-offset-8">
-            <p>Created by <a href="#">Mehmet Şirin Sulan</a>. &copy; 2021</p>
+            <p>Created by <a href="#">AKM</a>. &copy; 2021</p>
         </div>
     </div>
 
