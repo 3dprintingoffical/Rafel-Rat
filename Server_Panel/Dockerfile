@@ -1,13 +1,16 @@
 FROM php:8.2-apache
 
-# Enable URL rewriting
+# Enable .htaccess support and mod_rewrite
 RUN a2enmod rewrite
 
-# Copy app contents into Apache root (point to public/)
-COPY public/ /var/www/html/
+# Copy only the public folder contents to the web root
+COPY Server_Panel/public/ /var/www/html/
 
-# Set working directory
+# Copy the private folder somewhere safe inside the container
+COPY Server_Panel/private/ /var/www/private/
+
+# Set working directory to web root
 WORKDIR /var/www/html/
 
-# Optional: Set proper file permissions
-RUN chown -R www-data:www-data /var/www/html
+# (Optional) Set permissions
+RUN chown -R www-data:www-data /var/www
